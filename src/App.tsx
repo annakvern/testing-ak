@@ -10,18 +10,18 @@ interface CardData {
 const cards: CardData[] = [
   {
     img: "https://images.pexels.com/photos/93820/pexels-photo-93820.jpeg",
-    cardTitle: "First Card",
-    cardContent: "This is the first card content.",
+    cardTitle: "Nattfotografering",
+    cardContent: "Lär dig ta bilder i mörker.",
   },
   {
     img: "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg",
-    cardTitle: "Second Card",
-    cardContent: "Here goes another description.",
+    cardTitle: "Skogsnattvandring",
+    cardContent: "Vi vandrar i skogen om natten",
   },
   {
     img: "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg",
-    cardTitle: "Third Card",
-    cardContent: "More details here.",
+    cardTitle: "Nattdopp",
+    cardContent: "Följ med på nattdopp i tjärnen",
   },
 ];
 
@@ -33,6 +33,7 @@ function App() {
           fontFamily: "sans-serif",
           margin: "auto",
           textAlign: "center",
+          marginTop: 20,
         }}
       >
         Testing testing
@@ -43,6 +44,7 @@ function App() {
         style={{
           width: 900,
           margin: "auto",
+          marginTop: 50,
           display: "flex",
           gap: 50,
         }}

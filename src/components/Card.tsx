@@ -5,6 +5,9 @@ interface CardProps {
 }
 
 export default function Card({ img, cardTitle, cardContent }: CardProps) {
+  const handleOnClick = () => {
+    alert(`Du har nu bokat ${cardTitle}!`);
+  };
   return (
     <div
       style={{
@@ -25,9 +28,9 @@ export default function Card({ img, cardTitle, cardContent }: CardProps) {
         }}
       />
       <div style={{ padding: 12 }}>
-        <p style={{ margin: 0, fontWeight: 600, fontFamily: "sans-serif" }}>
+        <h2 style={{ margin: 0, fontWeight: 600, fontFamily: "sans-serif" }}>
           {cardTitle}
-        </p>
+        </h2>
         <p style={{ marginTop: 8 }}>{cardContent}</p>
         <button
           style={{
@@ -38,6 +41,7 @@ export default function Card({ img, cardTitle, cardContent }: CardProps) {
             borderRadius: 4,
             cursor: "pointer",
           }}
+          onClick={handleOnClick}
         >
           Boka
         </button>
