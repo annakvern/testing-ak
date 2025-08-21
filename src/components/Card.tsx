@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Form from "./Form";
+
 interface CardProps {
   img: string;
   cardTitle: string;
@@ -5,9 +8,16 @@ interface CardProps {
 }
 
 export default function Card({ img, cardTitle, cardContent }: CardProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleOnClick = () => {
-    alert(`Du har nu bokat ${cardTitle}!`);
+    setIsOpen(true);
   };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div
       style={{
@@ -46,6 +56,49 @@ export default function Card({ img, cardTitle, cardContent }: CardProps) {
           Boka
         </button>
       </div>
+
+      {isOpen && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0,0,0,0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              background: "white",
+              padding: 20,
+              borderRadius: 8,
+              width: 400,
+              position: "relative",
+            }}
+          >
+            <button
+              onClick={handleClose}
+              style={{
+                position: "absolute",
+                top: 8,
+                right: 8,
+                background: "transparent",
+                border: "none",
+                fontSize: 18,
+                cursor: "pointer",
+              }}
+            >
+              ✖
+            </button>
+            <h3 style={{ fontFamily: "sans-serif" }}>Boka {cardTitle}</h3>
+            <Form />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

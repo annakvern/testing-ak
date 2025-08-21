@@ -9,7 +9,7 @@ const cardData = {
 };
 
 describe("Card", () => {
-  it("should render dynamically", () => {
+  it("should render texts dynamically", () => {
     render(
       <Card
         img={cardData.img}

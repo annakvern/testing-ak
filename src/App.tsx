@@ -1,5 +1,6 @@
 import CounterButton from "./components/CounterButton";
 import Card from "./components/Card";
+import Form from "./components/Form";
 
 interface CardData {
   img: string;
