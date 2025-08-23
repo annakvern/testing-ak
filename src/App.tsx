@@ -1,6 +1,4 @@
-import CounterButton from "./components/CounterButton";
 import Card from "./components/Card";
-import Form from "./components/Form";
 
 interface CardData {
   img: string;
@@ -37,10 +35,8 @@ function App() {
           marginTop: 20,
         }}
       >
-        Testing testing
+        Boka aktivitet
       </h1>
-
-      <CounterButton />
       <div
         style={{
           width: 900,

@@ -94,7 +94,9 @@ export default function Card({ img, cardTitle, cardContent }: CardProps) {
             >
               ✖
             </button>
-            <h3 style={{ fontFamily: "sans-serif" }}>Boka {cardTitle}</h3>
+            <h3 style={{ fontFamily: "sans-serif", marginLeft: 8 }}>
+              Boka {cardTitle}
+            </h3>
             <Form />
           </div>
         </div>
