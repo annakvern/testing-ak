@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
-export default function Form() {
+export interface FormValues {
+  name: string;
+  email: string;
+}
+
+export interface FormProps {
+  onSuccess?: (values: FormValues) => void;
+}
+
+export default function Form({ onSuccess }: FormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -26,6 +35,7 @@ export default function Form() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    onSuccess?.({ name, email }); // <-- tell parent we're done (close modal)
   };
 
   return (

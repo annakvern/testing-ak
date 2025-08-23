@@ -97,7 +97,7 @@ export default function Card({ img, cardTitle, cardContent }: CardProps) {
             <h3 style={{ fontFamily: "sans-serif", marginLeft: 8 }}>
               Boka {cardTitle}
             </h3>
-            <Form />
+            <Form onSuccess={() => handleClose()} />
           </div>
         </div>
       )}
