@@ -1,4 +1,6 @@
-# Kodbas för Enhets- och integrationstestning av React komponenter.
+# Boka ativitet - en app för att öva på React Testing Library och Vitest
+
+I detta projekt har vi övat på att skriva tester och använda oss av Test Driven Development. Det är en enkel implementation med ett kort och ett formulär där vardera testas separat i enhetstester och App.test.tsx visar några integrationstester.
 
 ## Installation
 
