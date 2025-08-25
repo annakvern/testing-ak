@@ -15,6 +15,7 @@ Kör `npm run dev` för att starta utvecklingsservern.
 Kör `npm test` för att köra testerna. Kan köras utan att utvecklingsservern är igång.
 
 ## Coverage
+<img width="579" height="468" alt="Screenshot 2025-08-25 at 09 09 18" src="https://github.com/user-attachments/assets/a4700361-48b4-4e52-8980-7469441695b5" />
 
 Kör `npm run coverage` för att se hur stor del av kodbasen som testerna täcker.
 
