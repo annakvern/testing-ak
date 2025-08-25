@@ -22,11 +22,10 @@ export default function Form({ onSuccess }: FormProps) {
   const validate = () => {
     const inputErrors: { name?: string; email?: string } = {};
     if (!nameRegex.test(name)) {
-      inputErrors.name = "Namnet måste börja med en versal (A–Ö).";
+      inputErrors.name = "Namnet måste börja med en versal.";
     }
     if (!emailRegex.test(email)) {
-      inputErrors.email =
-        "Ogiltig e-postadress (måste innehålla @ och toppdomän).";
+      inputErrors.email = "Ogiltig e-postadress.";
     }
     setErrors(inputErrors);
     return Object.keys(inputErrors).length === 0;
@@ -35,7 +34,7 @@ export default function Form({ onSuccess }: FormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    onSuccess?.({ name, email }); // <-- tell parent we're done (close modal)
+    onSuccess?.({ name, email });
   };
 
   return (
@@ -65,7 +64,7 @@ export default function Form({ onSuccess }: FormProps) {
           <div
             id="name-error"
             role="alert"
-            style={{ color: "crimson", marginTop: 4 }}
+            style={{ color: "red", marginTop: 4 }}
           >
             {errors.name}
           </div>
@@ -93,7 +92,7 @@ export default function Form({ onSuccess }: FormProps) {
           <div
             id="email-error"
             role="alert"
-            style={{ color: "crimson", marginTop: 4 }}
+            style={{ color: "red", marginTop: 4 }}
           >
             {errors.email}
           </div>

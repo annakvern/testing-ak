@@ -5,14 +5,14 @@ import Form from "./Form";
 describe("Form", () => {
   it("is possible to write input in form", () => {
     render(<Form />);
-    const nameInput = screen.getByLabelText(/namn/i);
-    const emailInput = screen.getByLabelText(/email/i);
+    const nameInput = screen.getByLabelText("Namn:");
+    const emailInput = screen.getByLabelText("Email:");
 
     fireEvent.change(nameInput, { target: { value: "Anna" } });
-    fireEvent.change(emailInput, { target: { value: "anna@askd.com" } });
+    fireEvent.change(emailInput, { target: { value: "anna@askd.se" } });
 
     expect(nameInput).toHaveValue("Anna");
-    expect(emailInput).toHaveValue("anna@askd.com");
+    expect(emailInput).toHaveValue("anna@askd.se");
   });
 
   it("shows error if name does not start with capital letter", () => {
@@ -21,8 +21,8 @@ describe("Form", () => {
     const nameInput = screen.getByLabelText("Namn:");
     const emailInput = screen.getByLabelText("Email:");
 
-    fireEvent.change(nameInput, { target: { value: "anna" } }); // lowercase
-    fireEvent.change(emailInput, { target: { value: "anna@example.com" } });
+    fireEvent.change(nameInput, { target: { value: "anna" } });
+    fireEvent.change(emailInput, { target: { value: "anna@askd.se" } });
 
     fireEvent.click(screen.getByRole("button", { name: "Spara" }));
 
@@ -36,7 +36,7 @@ describe("Form", () => {
     const emailInput = screen.getByLabelText("Email:");
 
     fireEvent.change(nameInput, { target: { value: "Anna" } });
-    fireEvent.change(emailInput, { target: { value: "anna@askd" } }); // no .se/.com
+    fireEvent.change(emailInput, { target: { value: "anna@askd" } });
 
     fireEvent.click(screen.getByRole("button", { name: "Spara" }));
 
